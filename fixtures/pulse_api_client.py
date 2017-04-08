@@ -10,7 +10,8 @@ class PulseAPI:
     def create_object(self, object):
         obj_data = object.get_dict_without_id()
         response = requests.post(self.url, data=obj_data)
-        object.set_id(response.json()["id"])
+        if response.status_code == 201:
+            object.set_id(response.json()["id"])
         return response
 
     # def get_objects(self):
