@@ -5,6 +5,9 @@ class Book:
         self.author = author
         self.id = id
 
+    def __repr__(self):
+        return "{}:{}:{}".format(self.id, self.title, self.author)
+
     def set_id(self, id):
         self.id = id
 
@@ -21,6 +24,3 @@ class Book:
 if __name__ == "__main__":
     b = Book()
     print(b.title)
-
-    c = Role()
-    print(c.name)
