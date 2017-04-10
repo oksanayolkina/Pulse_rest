@@ -9,7 +9,3 @@ def app_b():
 @pytest.fixture(scope="session")
 def app_r():
     return PulseAPI(resource="roles")
-
-@pytest.fixture(scope="session")
-def app_r(app_b):
-    pass
