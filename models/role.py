@@ -13,9 +13,11 @@ class Role:
     def get_id(self):
         return self.id
 
+    def __repr__(self):
+        return "{}:{}:{}".format(self.id, self.name, self.type, self.level, self.book)
+
     def get_dict_without_id(self):
         return {"name": self.name, "type": self.type, "level": self.level, "book": self.book}
 
     def get_dict_with_id(self):
         return {"id": self.id, "name": self.name, "type": self.type, "level": self.level, "book": self.book}
-

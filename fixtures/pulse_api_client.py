@@ -14,10 +14,9 @@ class PulseAPI:
             object.set_id(response.json()["id"])
         return response
 
-    # def get_objects(self):
-    #     response = requests.get(self.url)
-    #     res = response.text()
-    #     return res
+    def get_objects(self):
+        response = requests.get(self.url).json()
+        return response
 
     def get_object(self, object):
         id = object.get_id()
