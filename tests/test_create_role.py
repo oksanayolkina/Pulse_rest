@@ -23,6 +23,11 @@ def test_create_role_no_level_and_book(app_r):
     assert role.get_level() is None
     assert role.get_book() is None
 
+    response = app_r.get_object(role).json()
+    # Verification
+    assert response["level"] == 0
+    assert response["book"] is None
+
     app_r.delete_object(role)
 
 def test_create_role_no_name(app_r):
