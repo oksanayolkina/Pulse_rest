@@ -1,5 +1,5 @@
 import pytest
-import requests
+
 from models.book import Book
 
 test_data = [
